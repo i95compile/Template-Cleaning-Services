@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9fafb;
+            overflow-x: hidden;
+        }
+
+        .highlight-blue {
+            color: #1e40af;
+        }
+
+        .star {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: floatStar 6s ease-in-out infinite;
+        }
+
+        @media(max-width:650px) {
+            .star {
+                display: none;
+            }
+        }
+
+        @keyframes floatStar {
+
+            0%,
+            100% {
+                transform: scale(1) translateY(0);
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: scale(1.5) translateY(-20px);
+                opacity: 1;
+            }
+        }
+
+        .profile-card:nth-child(2),
+        .profile-card:nth-child(4) {
+            margin-top: 3rem;
+        }
+
+        .profile-card:nth-child(5),
+        .profile-card:nth-child(7) {
+            margin-top: -3rem;
+        }
+
+        .profile-card {
+            align-self: flex-start;
+        }
+
+        @media (max-width:1200px) {
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+
+            .profile-card:nth-child(4),
+            .profile-card:nth-child(6) {
+                margin-top: -3rem;
+            }
+
+            .profile-card:nth-child(5) {
+                margin-top: 0;
+            }
+
+        }
+
+        @media (max-width:1000px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .profile-card:nth-child(3),
+            .profile-card:nth-child(5) {
+                margin-top: -3rem;
+            }
+
+            .profile-card:nth-child(4),
+            .profile-card:nth-child(6) {
+                margin-top: 0;
+            }
+        }
+
+        @media (max-width:750px) {
+            .team-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .profile-card {
+                margin-top: 0 !important;
+            }
+        }
+
+        @media (max-width:450px) {
+            .team-grid {
+                display: block !important;
+            }
+
+            .profile-card {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Floating Stars -->
+    <div class="star bg-gray-800 w-2 h-2 top-10 left-5 sm:left-20"></div>
+    <div class="star bg-blue-800 w-3 h-3 top-40 left-10 sm:left-60"></div>
+    <div class="star bg-gray-800 w-1 h-1 top-80 left-5 sm:left-10"></div>
+    <div class="star bg-gray-800 w-2 h-2 top-60 left-20 sm:left-80"></div>
+
+    <div class="star bg-gray-800 w-2 h-2 bottom-16 right-5 sm:right-20"></div>
+    <div class="star bg-blue-800 w-3 h-3 bottom-20 right-10 sm:right-40"></div>
+    <div class="star bg-gray-800 w-1 h-1 bottom-5 right-5 sm:right-10"></div>
+
+    <!-- Header -->
+    <header class="flex flex-wrap items-center justify-between px-4 sm:px-8 py-4 sm:py-6 sticky top-0 z-50">
+        <div class="text-2xl font-normal text-gray-800">Ayman Atif</div>
+
+        <nav class="hidden md:flex flex-wrap gap-2 sm:gap-4 bg-gray-100 rounded-full px-4 py-2 sm:px-6 sm:py-2">
+            <a data-id="home" href="#home"
+                class="px-3 py-2 rounded-full hover:bg-gray-200 transition text-sm sm:text-base">Home</a>
+            <a data-id="about" href="#about"
+                class="px-3 py-2 rounded-full hover:bg-gray-200 transition text-sm sm:text-base">About
+                Us</a>
+            <a data-id="services" href="#services"
+                class="px-3 py-2 rounded-full hover:bg-gray-200 transition text-sm sm:text-base">Services</a>
+            <a data-id="contact" href="#contact"
+                class="px-3 py-2 rounded-full hover:bg-gray-200 transition text-sm sm:text-base">Contact</a>
+        </nav>
+
+        <a href="#contact"
+            class="group flex items-center gap-3 rounded-full border-2 border-blue-800 text-blue-800 bg-transparent px-3 sm:px-5 py-2 sm:py-3 text-sm sm:text-base font-medium hover:bg-blue-800 hover:text-white transition">
+            Contact Us
+        </a>
+    </header>
+
+    <!-- Hero Section -->
+    <section data-id="home" id="home"
+        class="relative flex flex-col items-center justify-center text-center px-4 sm:px-8 py-24 sm:py-32 overflow-hidden">
+
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-normal leading-tight mb-6">
+            <span class="text-black">We Make</span>
+            <span class="highlight-blue">Your Cleaning</span><br>
+            <span class="text-black">Experience</span>
+            <span class="highlight-blue">Smoother</span>
+        </h1>
+
+        <p class="text-gray-700 max-w-xs sm:max-w-xl md:max-w-2xl mb-8 text-base sm:text-lg">
+            Professional cleaning services with a modern approach. We make your space shine while you focus on what
+            matters most.
+        </p>
+
+        <a href="#about"
+            class="group flex items-center gap-3 sm:gap-4 rounded-full bg-blue-800 text-white px-4 sm:px-5 py-2 sm:py-3 text-sm sm:text-base font-medium">
+            Get Started
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                class="bi bi-arrow-down-right-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.854 5.146a.5.5 0 1 0-.708.708L9.243 9.95H6.475a.5.5 0 1 0 0 1h3.975a.5.5 0 0 0 .5-.5V6.475a.5.5 0 1 0-1 0v2.768z" />
+            </svg>
+        </a>
+
+    </section>
+
+    <!-- About Us Section -->
+    <section data-id="about" id="about" class="flex justify-center pb-16 px-4">
+        <div class="relative w-[95%] rounded-[30px] overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0 bg-cover bg-center"
+                style="background-image: url('https://cdn.prod.website-files.com/6748553bbb51f9461a6df2e4/67513aabcb0afece45de85a3_Min%20Img-p-2000.jpg');">
+            </div>
+
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+            <!-- Content -->
+            <div class="relative z-10 flex flex-col items-center text-center px-6 py-32">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-6">
+                    About Us
+                </h2>
+                <p class="text-white max-w-xs sm:max-w-xl md:max-w-2xl mb-8 text-base sm:text-lg">
+                    We provide professional cleaning services with a modern approach. Our team ensures your space shines
+                    while you focus on what matters most.
+                </p>
+
+                <a href="#team"
+                    class="group flex items-center gap-3 sm:gap-4 rounded-full bg-blue-800 text-white px-4 sm:px-5 py-2 sm:py-3 text-sm sm:text-base font-medium">
+                    Check Our Team
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                        class="bi bi-arrow-down-right-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.854 5.146a.5.5 0 1 0-.708.708L9.243 9.95H6.475a.5.5 0 1 0 0 1h3.975a.5.5 0 0 0 .5-.5V6.475a.5.5 0 1 0-1 0v2.768z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Professionals Section -->
+    <section data-id="about" id="team" class="pb-32 px-16">
+        <div class="max-w-7xl mx-auto text-center">
+            <!-- Title & Description -->
+            <h2 class="text-4xl sm:text-6xl md:text-7xl font-normal leading-tight mb-6">
+                Meet the Professionals
+            </h2>
+            <p class="text-gray-700 max-w-3xl mx-auto mb-16 text-lg">
+                Our team of dedicated experts is here to make your space shine. Each professional brings a unique skill
+                set to ensure top-notch service.
+            </p>
+
+            <!-- Grid of Cards -->
+            <div class="grid grid-cols-4 gap-8 team-grid">
+
+                <div class="bg-white flex flex-col items-center p-12 space-y-6 rounded-lg profile-card">
+                    <!-- Profile Picture -->
+                    <img src="https://cdn.prod.website-files.com/6748553bbb51f9461a6df2e4/67513aabcb0afece45de85a3_Min%20Img-p-2000.jpg"
+                        alt="Profile" class="w-40 h-40 object-cover rounded-full">
+
+                    <!-- Name and Role -->
+                    <div class="text-center space-y-1">
+                        <h3 class="font-medium text-xl">John Doe</h3>
+                        <p class="text-gray-500 text-base">Lead Cleaner</p>
+                    </div>
+
+                    <!-- Social Buttons -->
+                    <div class="flex space-x-4">
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-chat-dots"></i>
+                        </button>
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-telephone"></i>
+                        </button>
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-whatsapp"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white flex flex-col items-center p-12 space-y-6 rounded-lg profile-card">
+                    <!-- Profile Picture -->
+                    <img src="https://cdn.prod.website-files.com/6748553bbb51f9461a6df2e4/67513aabcb0afece45de85a3_Min%20Img-p-2000.jpg"
+                        alt="Profile" class="w-40 h-40 object-cover rounded-full">
+
+                    <!-- Name and Role -->
+                    <div class="text-center space-y-1">
+                        <h3 class="font-medium text-xl">Liam Smith</h3>
+                        <p class="text-gray-500 text-base">Cleaning Specialist</p>
+                    </div>
+
+                    <!-- Social Buttons -->
+                    <div class="flex space-x-4">
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-chat-dots"></i>
+                        </button>
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-telephone"></i>
+                        </button>
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-whatsapp"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white flex flex-col items-center p-12 space-y-6 rounded-lg profile-card">
+                    <!-- Profile Picture -->
+                    <img src="https://cdn.prod.website-files.com/6748553bbb51f9461a6df2e4/67513aabcb0afece45de85a3_Min%20Img-p-2000.jpg"
+                        alt="Profile" class="w-40 h-40 object-cover rounded-full">
+
+                    <!-- Name and Role -->
+                    <div class="text-center space-y-1">
+                        <h3 class="font-medium text-xl">Robert Johnson</h3>
+                        <p class="text-gray-500 text-base">Customer Relations</p>
+                    </div>
+
+                    <!-- Social Buttons -->
+                    <div class="flex space-x-4">
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-chat-dots"></i>
+                        </button>
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-telephone"></i>
+                        </button>
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-whatsapp"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white flex flex-col items-center p-12 space-y-6 rounded-lg profile-card">
+                    <!-- Profile Picture -->
+                    <img src="https://cdn.prod.website-files.com/6748553bbb51f9461a6df2e4/67513aabcb0afece45de85a3_Min%20Img-p-2000.jpg"
+                        alt="Profile" class="w-40 h-40 object-cover rounded-full">
+
+                    <!-- Name and Role -->
+                    <div class="text-center space-y-1">
+                        <h3 class="font-medium text-xl">Noah Brown</h3>
+                        <p class="text-gray-500 text-base">Sanitation Expert</p>
+                    </div>
+
+                    <!-- Social Buttons -->
+                    <div class="flex space-x-4">
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-chat-dots"></i>
+                        </button>
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-telephone"></i>
+                        </button>
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-whatsapp"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white flex flex-col items-center p-12 space-y-6 rounded-lg profile-card">
+                    <!-- Profile Picture -->
+                    <img src="https://cdn.prod.website-files.com/6748553bbb51f9461a6df2e4/67513aabcb0afece45de85a3_Min%20Img-p-2000.jpg"
+                        alt="Profile" class="w-40 h-40 object-cover rounded-full">
+
+                    <!-- Name and Role -->
+                    <div class="text-center space-y-1">
+                        <h3 class="font-medium text-xl">Olivia Davis</h3>
+                        <p class="text-gray-500 text-base">Quality Inspector</p>
+                    </div>
+
+                    <!-- Social Buttons -->
+                    <div class="flex space-x-4">
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-chat-dots"></i>
+                        </button>
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-telephone"></i>
+                        </button>
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-whatsapp"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white flex flex-col items-center p-12 space-y-6 rounded-lg profile-card">
+                    <!-- Profile Picture -->
+                    <img src="https://cdn.prod.website-files.com/6748553bbb51f9461a6df2e4/67513aabcb0afece45de85a3_Min%20Img-p-2000.jpg"
+                        alt="Profile" class="w-40 h-40 object-cover rounded-full">
+
+                    <!-- Name and Role -->
+                    <div class="text-center space-y-1">
+                        <h3 class="font-medium text-xl">Ava Martinez</h3>
+                        <p class="text-gray-500 text-base">Eco Specialist</p>
+                    </div>
+
+                    <!-- Social Buttons -->
+                    <div class="flex space-x-4">
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-chat-dots"></i>
+                        </button>
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-telephone"></i>
+                        </button>
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-whatsapp"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white flex flex-col items-center p-12 space-y-6 rounded-lg profile-card">
+                    <!-- Profile Picture -->
+                    <img src="https://cdn.prod.website-files.com/6748553bbb51f9461a6df2e4/67513aabcb0afece45de85a3_Min%20Img-p-2000.jpg"
+                        alt="Profile" class="w-40 h-40 object-cover rounded-full">
+
+                    <!-- Name and Role -->
+                    <div class="text-center space-y-1">
+                        <h3 class="font-medium text-xl">Mia Thompson</h3>
+                        <p class="text-gray-500 text-base">Sanitation Innovator</p>
+                    </div>
+
+                    <!-- Social Buttons -->
+                    <div class="flex space-x-4">
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-chat-dots"></i>
+                        </button>
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-telephone"></i>
+                        </button>
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-whatsapp"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white flex flex-col items-center p-12 space-y-6 rounded-lg profile-card">
+                    <!-- Profile Picture -->
+                    <img src="https://cdn.prod.website-files.com/6748553bbb51f9461a6df2e4/67513aabcb0afece45de85a3_Min%20Img-p-2000.jpg"
+                        alt="Profile" class="w-40 h-40 object-cover rounded-full">
+
+                    <!-- Name and Role -->
+                    <div class="text-center space-y-1">
+                        <h3 class="font-medium text-xl">Lucas Rivera</h3>
+                        <p class="text-gray-500 text-base">Customer Lead</p>
+                    </div>
+
+                    <!-- Social Buttons -->
+                    <div class="flex space-x-4">
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-chat-dots"></i>
+                        </button>
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-telephone"></i>
+                        </button>
+                        <button
+                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                            <i class="bi bi-whatsapp"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section data-id="about" class="bg-gray-100 py-24">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Title -->
+            <h2 class="text-3xl sm:text-5xl md:text-6xl font-normal leading-tight mb-14">
+                <span class="text-black">Built on trust</span>
+                <span class="highlight-blue">results</span><br>
+                <span class="text-black">and real work</span>
+            </h2>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-16">
+
+                <!-- Image card (wide) -->
+                <div class="lg:col-span-2">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="Cleaning service"
+                        class="w-full h-full object-cover rounded-2xl" />
+                </div>
+
+                <!-- Stat card 1 -->
+                <div class="bg-blue-800 text-white rounded-2xl p-10 flex flex-col">
+                    <h4 class="text-lg font-medium">
+                        Clients served
+                    </h4>
+
+                    <div class="flex-1"></div>
+
+                    <p class="text-5xl font-semibold">
+                        500+
+                    </p>
+
+                    <p class="mt-4 text-blue-200 leading-relaxed">
+                        Residential and commercial clients worldwide
+                    </p>
+                </div>
+
+                <!-- Stat card 2 -->
+                <div class="bg-blue-800 text-white rounded-2xl p-10 flex flex-col">
+                    <h4 class="text-lg font-medium">
+                        Revenue generated
+                    </h4>
+
+                    <div class="flex-1"></div>
+
+                    <p class="text-5xl font-semibold">
+                        $2.4M
+                    </p>
+
+                    <p class="mt-4 text-blue-200 leading-relaxed">
+                        Across residential and commercial cleaning projects worldwide.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Bottom description -->
+            <p class="text-2xl text-gray-700 max-w-4xl leading-relaxed">
+                We’re not just another cleaning company. We focus on long-term partnerships,
+                operational excellence, and delivering consistent results that our clients
+                can rely on day after day.
+            </p>
+
+        </div>
+    </section>
+
+    <section data-id="services" id="services" class="flex justify-center pb-16 px-4">
+        <div class="relative w-[95%] rounded-[30px] overflow-hidden bg-blue-800">
+
+            <!-- Floating Sparkles -->
+            <span
+                class="absolute top-16 left-20 w-2 h-2 bg-white rounded-full opacity-60 animate-ping [animation-duration:2s]"></span>
+            <span
+                class="absolute top-32 right-24 w-1.5 h-1.5 bg-white rounded-full opacity-40 animate-ping [animation-duration:3s]"></span>
+            <span
+                class="absolute bottom-24 left-1/3 w-2.5 h-2.5 bg-white rounded-full opacity-50 animate-ping [animation-duration:3s]"></span>
+            <span
+                class="absolute bottom-16 right-1/4 w-1.5 h-1.5 bg-white rounded-full opacity-30 animate-ping [animation-duration:2s]"></span>
+
+            <!-- Content -->
+            <div class="relative z-10 flex flex-col items-center text-center px-6 py-32">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-6">
+                    Our Services
+                </h2>
+
+                <p class="text-blue-100 max-w-xs sm:max-w-xl md:max-w-2xl mb-8 text-base sm:text-lg leading-relaxed">
+                    From deep residential cleaning to reliable commercial maintenance, we offer tailored services
+                    designed
+                    to meet modern standards of hygiene, efficiency, and care.
+                </p>
+
+                <a href="#services-grid"
+                    class="group flex items-center gap-3 sm:gap-4 rounded-full bg-white text-blue-800 px-4 sm:px-5 py-2 sm:py-3 text-sm sm:text-base font-medium">
+                    Explore Our Services
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                        class="bi bi-arrow-down-right-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.854 5.146a.5.5 0 1 0-.708.708L9.243 9.95H6.475a.5.5 0 1 0 0 1h3.975a.5.5 0 0 0 .5-.5V6.475a.5.5 0 1 0-1 0v2.768z" />
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section data-id="services" id="services-grid" class="px-4 py-24 bg-white">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Big Title -->
+            <h2 class="text-3xl sm:text-4xl font-medium mb-12">
+                <span class="text-black">Our Company Provide</span>
+                <span class="highlight-blue">The Best Cleaning Service</span>
+            </h2>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <!-- Service 1 -->
+                <div class="group relative h-[520px] rounded-3xl overflow-hidden">
+
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Window Cleaning"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
+
+                    <div class="absolute inset-0 bg-black/20"></div>
+
+                    <div class="relative z-10 p-6">
+                        <div class="inline-block bg-gray-100 rounded-2xl px-6 py-4 max-w-sm">
+                            <h3 class="text-xl font-medium mb-2">
+                                Window Cleaning
+                            </h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Professional interior and exterior window cleaning for homes and businesses.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group relative h-[520px] rounded-3xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Carpet Cleaning"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div class="relative z-10 p-6">
+                        <div class="inline-block bg-gray-100 rounded-2xl px-6 py-4 max-w-sm">
+                            <h3 class="text-xl font-medium mb-2">
+                                Carpet Cleaning
+                            </h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Deep cleaning for carpets, rugs, and upholstery, removing dirt, stains, and allergens.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group relative h-[520px] rounded-3xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Office Cleaning"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div class="relative z-10 p-6">
+                        <div class="inline-block bg-gray-100 rounded-2xl px-6 py-4 max-w-sm">
+                            <h3 class="text-xl font-medium mb-2">
+                                Office Cleaning
+                            </h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Keep your workspace spotless with professional daily, weekly, or monthly cleaning
+                                services.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="group relative h-[520px] rounded-3xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Floor Polishing"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div class="relative z-10 p-6">
+                        <div class="inline-block bg-gray-100 rounded-2xl px-6 py-4 max-w-sm">
+                            <h3 class="text-xl font-medium mb-2">
+                                Floor Polishing
+                            </h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Professional polishing for hardwood, marble, and tile floors to restore shine and
+                                elegance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section data-id="contact" id="contact" class="py-24 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+            <!-- Left Column -->
+            <div class="space-y-8">
+                <div>
+                    <h2 class="text-3xl sm:text-4xl font-medium mb-4">
+                        Get in touch
+                    </h2>
+                    <p class="text-gray-600 max-w-md">
+                        Have a question or need a custom cleaning solution? Reach out and we’ll get back to you shortly.
+                    </p>
+                </div>
+
+                <!-- Phone -->
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
+                        <i class="bi bi-telephone text-gray-700"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Phone</p>
+                        <p class="font-medium text-lg">+1 (555) xxx-xxxx</p>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
+                        <i class="bi bi-envelope text-gray-700"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Email</p>
+                        <p class="font-medium text-lg">contact@example.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column (Form Card) -->
+            <div class="bg-white rounded-2xl p-10 space-y-6">
+                <div>
+                    <h3 class="text-xl font-medium mb-2">
+                        Send us a message
+                    </h3>
+                    <p class="text-gray-600 text-sm">
+                        Fill out the form and we’ll contact you as soon as possible.
+                    </p>
+                </div>
+
+                <!-- Form -->
+                <form class="space-y-5">
+                    <div>
+                        <label class="block text-sm text-gray-600 mb-1">Name</label>
+                        <input type="text"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-800"
+                            placeholder="Your full name" />
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-gray-600 mb-1">Email</label>
+                        <input type="email"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-800"
+                            placeholder="you@email.com" />
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-gray-600 mb-1">Phone</label>
+                        <input type="tel"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-800"
+                            placeholder="+1 (___) ___-____" />
+                    </div>
+
+                    <button type="button"
+                        class="group flex items-center justify-center gap-3 w-full rounded-full bg-blue-800 text-white px-6 py-3 font-medium">
+                        Contact Us
+                        <i class="bi bi-arrow-up-right"></i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="py-6 text-center bg-white text-gray-500 text-sm">
+        &copy; 2026 Ayman Atif. All rights reserved.
+    </footer>
+
+    <script>
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                header.classList.add('bg-gray-50');
+            } else {
+                header.classList.remove('bg-gray-50');
+            }
+        });
+
+        const sections = document.querySelectorAll('section[data-id]');
+        const navLinks = document.querySelectorAll('nav a[data-id]');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                const sectionId = entry.target.dataset.id;
+
+                navLinks.forEach(link => {
+                    link.classList.toggle(
+                        'bg-gray-200',
+                        link.dataset.id === sectionId
+                    );
+                });
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        sections.forEach(section => observer.observe(section));
+    </script>
+
+</body>
+
+</html>
